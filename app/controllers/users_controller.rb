@@ -13,13 +13,14 @@ class UsersController < ApplicationController
         respond_to do |format|
           if @user.save
             format.html {redirect_to 'welcome/index', notice: 'You may sign now.'}
-          else format.html {redirect_to 'new'}
-            format.json{@user}
+          else
+            format.html {redirect_to 'new'}
+            #format.json{@user}
           end
         end
       end
     end
     private
-    def user_params
+    def user_params_register
       params.require(:user).permit(:email,:password, :confirm_password)
 end

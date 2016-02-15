@@ -6,10 +6,9 @@ class UsersController < ApplicationController
   def new
     @user=User.new
   end
-  end
     def register
       @user=User.new(user_params_register)
-      if (@user.save)
+
         respond_to do |format|
           if @user.save
             format.html {redirect_to root_path , notice: 'You may sign now.'}
@@ -19,8 +18,8 @@ class UsersController < ApplicationController
           end
         end
       end
-    end
     private
     def user_params_register
       params.require(:user).permit(:email,:password, :password_confirmation)
-end
+    end
+  end

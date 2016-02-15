@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isbn: 
+  title: 
+  author: 
+  category: 
+  publisher: 
+  copyright: 
+  description: MyText
+
+two:
+  isbn: 
+  title: 
+  author: 
+  category: 
+  publisher: 
+  copyright: 
+  description: MyText

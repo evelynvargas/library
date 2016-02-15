@@ -34,9 +34,17 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Add Book</a></li>
-            <li><a href="#">Search Book</a></li>
-            <li><a href="#">Edit Books</a></li>
+            <li><%= link_to 'All Books', books_path, remote: true, class: "model-books" %> </li>
+            <li role="separator" class="divider"></li>
+                    <% if logged_in? %>
+            <li><a href="#">New Added Book</a></li>
+                <li role="separator" class="divider"></li>
+            <li><a href="#">Old Books</a></li>
+                <% if is_admin? %>
+                    <li role="separator" class="divider"></li>
+                    <li class="bg-warning"><%= link_to 'Add Category', new_category_path, remote: true,class: "model books"%></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="bg-warning"><%= link_to 'Add Books', new_book_path, remote: true,class: "model books"%></li>
             <li role="separator"  class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
@@ -69,6 +77,9 @@
 </nav>
 <!--******-->
 <%= yield %>
+<div id="library-modal" class="modal fade" role="dialog" tabindex="1" style="...">
+
+</div>
 
 </body>
 </html>

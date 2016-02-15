@@ -8,13 +8,13 @@ class UsersController < ApplicationController
   end
   end
     def register
-      @user=User.new(user_params)
+      @user=User.new(user_params_register)
       if (@user.save)
         respond_to do |format|
           if @user.save
-            format.html {redirect_to 'welcome/index', notice: 'You may sign now.'}
+            format.html {redirect_to root_path , notice: 'You may sign now.'}
           else
-            format.html {redirect_to 'new'}
+            format.html {render 'new'}
             #format.json{@user}
           end
         end
@@ -22,5 +22,5 @@ class UsersController < ApplicationController
     end
     private
     def user_params_register
-      params.require(:user).permit(:email,:password, :confirm_password)
+      params.require(:user).permit(:email,:password, :password_confirmation)
 end

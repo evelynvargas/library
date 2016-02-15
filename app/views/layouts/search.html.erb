@@ -1,0 +1,45 @@
+<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search</button>
+
+<div class="container col-md-offset-3">
+  <div class="row col-md-6"></div>
+  <div class="form-group">
+    <%= f.label :'Books' %>
+    <% f.text_field :books, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'ISBN' %>
+    <% f.text_field :isbn, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Title' %>
+    <% f.text_field :title, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Author' %>
+    <% f.email_field :author, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Category' %>
+    <% f.text_field :category, class: 'form-control'%>
+    <%= f.select{:category}%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Publisher' %>
+    <% f.text_field :publisher, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Copyright' %>
+    <% f.text_field :copyright, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Description' %>
+    <% f.text_area :description, class: 'form-control'%>
+  </div>
+  <span class="dl-horizontal"></span>
+  <%=f.submit :Prev, {'class'=>'btn btn-lg btn-success-left' } %>
+  <% end %>
+  <span class="dl-horizontal"></span>
+  <%=f.submit :Next, {'class'=>'btn btn-lg btn-success-right'} %>
+  <% end %>
+  <button class="btn btn-default" type="submit">Search</button>
+</div>

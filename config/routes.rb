@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  resource :users do
+  resource :auths do
     member do
       get 'login'
       post 'verify'
       post 'logout'
-
     end
   end
   get 'welcome/index'
@@ -15,6 +14,9 @@ Rails.application.routes.draw do
     post 'register'
   end
   end
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

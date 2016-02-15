@@ -1,0 +1,41 @@
+<div class="container col-md-offset-3">
+  <div class="row col-md-6"></div>
+  <div class="form-group">
+    <%= f.label :'Books' %>
+    <% f.text_field :books, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'ISBN' %>
+    <% f.text_field :isbn, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Title' %>
+    <% f.text_field :title, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Author' %>
+    <% f.email_field :author, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Category' %>
+    <% f.text_field :category, class: 'form-control'%>
+    <%= f.select(p1='Comedy',p2='Fiction',p3='Fan Fiction',
+                 p4='Love Story',p5='Romantic-Comedy',p6='True Story',){:category}%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Publisher' %>
+    <% f.text_field :publisher, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Copyright' %>
+    <% f.text_field :copyright, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :'Description' %>
+    <% f.text_area :description, class: 'form-control'%>
+  </div>
+  <ul class="pager">
+    <li class="previous disabled"><a href="#">&larr; Previous</a></li>
+    <li class="next"><a href="#">Next &rarr;</a></li>
+  </ul>
+</div>

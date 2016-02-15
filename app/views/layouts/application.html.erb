@@ -28,13 +28,12 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Books<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to 'All Books', books_path, remote: true, class: "model-books" %></li>
+            <li><%= link_to 'All Books', remote:true,class: "model-books" %></li>
             <li role="separator" class="divider"></li>
             <% if logged_in? %>
             <li><a href="#">New Added Book</a></li>
                 <li role="separator" class="divider"></li>
             <li><a href="#">Old Books</a></li>
-            <% end %>
                 <% if is_admin? %>
                     <li role="separator" class="divider"></li>
                     <li class="bg-warning"><%= link_to 'Add Category', new_category_path, remote: true,class: "model books"%></li>
@@ -42,6 +41,7 @@
                     <li class="bg-warning"><%= link_to 'Add Books', new_book_path, remote: true,class: "model books"%></li>
                     <li role="separator"  class="divider"></li>
                 <% end %>
+            <% end %>
           </ul>
         </li>
       </ul>
@@ -60,15 +60,14 @@
           <ul class="dropdown-menu">
             <% if !logged_in? %>
              <li><a href="<%= new_users_path %>">Sign Up</a></li>
-             <li><a href="<%= login_auths_path %>">Sign In</a></li>
+             <li><a href="<%= login_auths_path %>">Log In</a></li>
             <% else %>
              <%= link_to "Log out", logout_auths_path, method: :get %>
             <% end %>
         <li role="separator" class="divider"></li>
-        <!--<li><a href="#">Separated link</a></li>
         </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 <!--******-->
 <%= yield %>
